@@ -13,7 +13,7 @@ namespace ClassSample
             Console.WriteLine("Aluno constructor"); // construtor
         }
 
-        public Aluno (string _nome, int _idade)
+        public Aluno(string _nome, int _idade)
         {
             this.nome = _nome;
             this.idade = _idade;
@@ -36,7 +36,7 @@ namespace ClassSample
             }
 
         }
-                
+
         public int Idade
         {
             get
@@ -45,16 +45,43 @@ namespace ClassSample
             }
             set
             {
-                idade = value;
+                if (value >= 18)
+                    idade = value;
             }
 
         }
 
         //metodo - tudo aquilo que representa uma ação
-       public void Limpar(){
+        public int GetTwiceIdade()
+        {
+            int twice = this.idade * 2;
+            return twice;
+        }
+
+        public bool VerifyMajor (int _idade)
+        {
+
+            bool verify = false;
+            if (_idade >= 18)
+                verify = true;
+            else
+                verify = false;
+
+            return verify;
+        }
+
+        public void Limpar()
+        {
             this.idade = 0;
             this.nome = string.Empty;
         }
+
+        private void GoAge()
+        {
+            this.idade = 21;
+        }
+
+
 
         ~Aluno()
         {

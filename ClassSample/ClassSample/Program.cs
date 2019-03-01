@@ -21,9 +21,8 @@ namespace ClassSample //unidade organizacional de classes
 
             Aluno a3 = new Aluno ("Alberto", 25);
 
+            Console.WriteLine(a1.GetTwiceIdade());
             Console.ReadKey();
-
-            Console.WriteLine(a1.Idade);
             a1.Limpar();
 
         }
